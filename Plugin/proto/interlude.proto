@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package interlude;
+
+message Scenario {
+    string id = 1;
+    string chain = 2;
+    string agent = 3;
+}
+
+message ScenarioList { 
+    repeated Scenario scenario = 1; 
+}
+
+service importScenario {
+    rpc importScenario(Scenario) returns (ScenarioList) {}
+}
